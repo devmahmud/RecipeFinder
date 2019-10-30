@@ -1,22 +1,69 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+.bg-image {
+  position: relative;
+  background: linear-gradient(rgba(8, 8, 8, 0.3), rgba(8, 8, 8, 0.3)), url('/images/homeBcg.jpeg');
+  background-size: cover !important;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.bg-default-image {
+  position: relative;
+  background: linear-gradient(rgba(8, 8, 8, 0.3), rgba(8, 8, 8, 0.3)), url('/images/defaultBcg.jpeg');
+  background-size: cover !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.text-content {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.header-title {
+  text-transform: uppercase;
+  font-family: 'Courgette', cursive;
+  letter-spacing: 1rem;
+  color: white;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+
+}
+
+.sub-text {
+  text-transform: uppercase;
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.search-box {
+  padding-top: 5rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.search-heading {
+  font-family: 'Courgette', cursive;
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.text-cursive {
+  font-family: 'Courgette', cursive !important;
+}
+
+.detailPageContent {
+  padding-top: 6rem !important;
+}
+
+.txt-yellow {
+  font-size: 1.2rem;
+  color: rgb(182, 152, 17)
 }
