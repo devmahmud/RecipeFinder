@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Container, Header, Grid } from "semantic-ui-react";
-import RecipeListItem from "./RecipeListItem";
-import Loader from "./layout/Loader";
-import { FOOD_API_KEY } from "../config";
+import React, { useState, useEffect } from 'react';
+import { Container, Header, Grid } from 'semantic-ui-react';
+import RecipeListItem from './RecipeListItem';
+import Loader from './layout/Loader';
+import { RECIPE_API } from '../config';
 
 function RecipeList(props) {
   const [state, setState] = useState({ recipes: [], loading: false });
@@ -14,7 +14,7 @@ function RecipeList(props) {
 
   const getRecipes = async () => {
     try {
-      const url = `https://www.food2fork.com/api/search?key=${FOOD_API_KEY}&q=${props.query}`;
+      const url = `${RECIPE_API}/search?q=${props.query}`;
       setState({ ...state, loading: true });
       const response = await fetch(url);
       const result = await response.json();
@@ -28,9 +28,7 @@ function RecipeList(props) {
     <Container>
       <Header
         size="huge"
-        content={
-          props.query ? `RECIPE LIST FOR: ${props.query}` : "RECIPE LIST"
-        }
+        content={props.query ? `RECIPE LIST FOR: ${props.query}` : 'RECIPE LIST'}
         className="text-cursive"
         textAlign="center"
       />

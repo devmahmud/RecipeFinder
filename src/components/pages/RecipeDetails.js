@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Grid, Button, Image, Header, Segment } from "semantic-ui-react";
-import Loader from "../layout/Loader";
-import { FOOD_API_KEY } from "../../config";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Grid, Button, Image, Header, Segment } from 'semantic-ui-react';
+import Loader from '../layout/Loader';
+import { RECIPE_API } from '../../config';
 
 function RecipeDetails(props) {
   const [state, setState] = useState({ recipe: {}, loading: true });
@@ -10,9 +10,7 @@ function RecipeDetails(props) {
   useEffect(() => {
     const getRecipe = async () => {
       try {
-        const response = await fetch(
-          `https://www.food2fork.com/api/get?key=${FOOD_API_KEY}&rId=${props.match.params.recipe_id}`
-        );
+        const response = await fetch(`${RECIPE_API}/get?rId=${props.match.params.recipe_id}`);
         const result = await response.json();
         setState({ recipe: result.recipe, loading: false });
       } catch (err) {
@@ -32,16 +30,14 @@ function RecipeDetails(props) {
             to="/recipes"
             color="yellow"
             content="Back to recipe list"
-            style={{ marginBottom: "3rem" }}
+            style={{ marginBottom: '3rem' }}
           />
           {state.loading && <Loader />}
           <Image src={state.recipe.image_url} />
         </Grid.Column>
         <Grid.Column>
           <Header size="medium">{state.recipe.title}</Header>
-          <p className="text-cursive txt-yellow">
-            Provided By {state.recipe.publisher}
-          </p>
+          <p className="text-cursive txt-yellow">Provided By {state.recipe.publisher}</p>
           <Button
             as="a"
             href={state.recipe.publisher_url}

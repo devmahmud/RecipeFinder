@@ -1,1 +1,1 @@
-export const FOOD_API_KEY = "";
+export const RECIPE_API = 'https://forkify-api.herokuapp.com/api';
