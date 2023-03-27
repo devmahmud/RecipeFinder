@@ -73,7 +73,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 docker build -t <IMAGE_NAME> .
 ```
 
-### Build Docker Image of the Application
+### Execute Docker Image as a Container
 
 ```sh
 docker run -d -p 3000:3000 --name <YOUR_CONTAINER_NAME> ,IMAGE_NAME>
