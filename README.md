@@ -76,7 +76,7 @@ docker build -t <IMAGE_NAME> .
 ### Execute Docker Image as a Container
 
 ```sh
-docker run -d -p 3000:3000 --name <YOUR_CONTAINER_NAME> ,IMAGE_NAME>
+docker run -d -p 3000:3000 --name <YOUR_CONTAINER_NAME> <IMAGE_NAME>
 ```
 
 
